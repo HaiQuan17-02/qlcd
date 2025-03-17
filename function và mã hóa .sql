@@ -153,3 +153,14 @@ BEGIN
     RETURN;
 END;
 SELECT * FROM dbo.fn_ChuyenDeTheoNganh();
+
+--mã hóa cột mã sinh viên trong bảng sinh viên 
+ALTER TABLE SinhVien ADD MaSV_Encrypted VARBINARY(MAX);
+UPDATE SinhVien
+SET MaSV_Encrypted = ENCRYPTBYPASSPHRASE('SecretKey', MaSV);
+select*from SinhVien
+
+ALTER TABLE SinhVien ADD HoTen_Encrypted VARBINARY(MAX)
+UPDATE SinhVien
+Set HoTen_Encrypted = ENCRYPTBYPASSPHRASE('SecretKey', HoTen);
+select*from SinhVien
