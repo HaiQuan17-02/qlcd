@@ -1,4 +1,4 @@
-﻿--INDEX 
+--INDEX 
 CREATE NONCLUSTERED INDEX IX_SinhVien_Nganh ON SinhVien(MaNganh);
 SELECT * FROM SinhVien WHERE MaNganh = 'CNTT';
 
